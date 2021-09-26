@@ -1,0 +1,105 @@
+namespace Day1
+{
+    public class Bank : BankInfo
+    {
+        
+        
+        public void SavingAcc()
+        {
+            Console.WriteLine("create Saving acc");
+            CreateACC();
+
+        }
+        public void CurrentAcc()
+        {
+            Console.WriteLine("create Current acc");
+            CreateACC();
+        }
+
+        public void checkbalance()
+        {
+            
+            balance += deposite;
+            Console.WriteLine("current balance is: "+balance);
+        }
+        public void Withdraw()
+        {
+            int withdraw;
+            Console.WriteLine("enter the withdraw amount");
+            withdraw = Convert.ToInt32(Console.ReadLine());
+            if (balance >= withdraw)
+            {
+                balance = balance - withdraw;
+                Console.WriteLine("after withdraw:" + balance);
+            }
+            else
+            {
+                Console.WriteLine("your balance is less then withdraw amount");
+            }
+        }
+        public void Deposite()
+
+        {
+            int amt;
+            Console.WriteLine("enter the deposite amount");
+            amt = Convert.ToInt32(Console.ReadLine());
+            balance += amt;
+            Console.WriteLine("after depositing amount:" +balance);
+        }
+
+        public static void Main(string[] args)
+        {
+            Bank ba = new Bank();
+            ba.GetDetails();
+            ba.Display();
+            Console.WriteLine("enter the choice");
+            int num;
+            do
+            {
+               
+              
+                num = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("\nChoose to Create\n1.Create current account\n2.saving account");
+                Console.WriteLine("\noption\n3.deposite\n4.withdrwal\n6.checkbalance");
+                Console.WriteLine(" ----------------------------------");
+
+                switch (num)
+                {
+                    case 1:
+                        
+                        ba.CurrentAcc();
+                        break;
+                    case 2:
+                        ba.SavingAcc();
+                        break;
+                    case 3:
+                        
+                        ba.Deposite();
+                        break;
+                    case 4:
+                        
+                        ba.Withdraw();
+                        break;
+                    case 6:
+                        ba.checkbalance();
+                        break;
+                    case 5:
+                        break;
+                }
+
+               
+
+            } while (num!=5);
+        }
+    }
+}
+
+
+
+            
+
+
+   
+   
+    
+

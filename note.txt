@@ -1,0 +1,38 @@
+ public class BankInfo
+    {
+        String name;
+        string Pan;
+        int aadharno;
+        public double balance, deposite, withdraw;
+        public void CreateACC()
+        {
+
+            Console.WriteLine("enter the name");
+            name = Console.ReadLine();
+            Console.WriteLine("enter the pan number");
+            Pan = Console.ReadLine();
+            Console.WriteLine("enter the aadhar number");
+            aadharno = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Suceessfully account creat");
+        }
+        public void GetDetails()
+        {
+            Console.WriteLine("enter the name");
+            name = Console.ReadLine();
+            Console.WriteLine("enter the balance");
+            balance = Convert.ToInt32(Console.ReadLine());
+        }
+        public void Display()
+        {
+            Console.WriteLine("name:" + name);
+
+            Console.WriteLine("balance:" + balance);
+
+        }
+    }
+}
+
+
+
+
+
